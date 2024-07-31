@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.example.pharmacy_management_system.controllers.SalesController"
+           prefHeight="400.0" prefWidth="600.0">
+    <VBox spacing="10" alignment="TOP_CENTER">
+        <fx:include source="Header.fxml" />
+
+    <VBox spacing="20" alignment="TOP_CENTER" style="-fx-padding: 20px;">
+        <Label text="Purchase History" textFill="#0e141b">
+            <font>
+                <Font name="Inter Bold" size="24"/>
+            </font>
+            <VBox.margin>
+                <Insets top="30" left="250"/>
+            </VBox.margin>
+        </Label>
+
+        <TableView fx:id="purchaseHistoryTable" style="-fx-pref-width: 80px;" maxWidth="1300">
+            <columns>
+                <TableColumn fx:id="drugNameColumn" text="Drug Name" />
+                <TableColumn fx:id="buyerColumn" text="Buyer" />
+                <TableColumn fx:id="dateColumn" text="Date" />
+                <TableColumn fx:id="timeColumn" text="Time" />
+            </columns>
+        </TableView>
+    </VBox>
+    </VBox>
+
+</StackPane>

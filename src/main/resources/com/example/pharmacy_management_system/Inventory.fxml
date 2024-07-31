@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.example.pharmacy_management_system.controllers.DrugsController"
+           prefHeight="400.0" prefWidth="600.0">
+    <VBox spacing="10" alignment="TOP_CENTER">
+        <fx:include source="Header.fxml" />
+        <VBox spacing="20" alignment="TOP_CENTER">
+            <HBox spacing="10" alignment="CENTER" style="-fx-padding: 20px;">
+                <TextField fx:id="searchTextField" promptText="Search drugs..." style="-fx-pref-width: 300px; -fx-pref-height: 40px; -fx-font-family: 'Inter'; -fx-font-size: 14;"/>
+                <Button fx:id="searchButton" text="Search" textFill="#ffffff" style="-fx-background-color: #1972d2; -fx-pref-height: 40px; -fx-font-family: 'Inter'; -fx-font-size: 14;"/>
+            </HBox>
+            <Label text="Drug Inventory" textFill="#0e141b" alignment="BASELINE_LEFT">
+                <font>
+                    <Font name="Inter Bold" size="24"/>
+                </font>
+                <VBox.margin>
+                    <Insets top="30" left="250"/>
+                </VBox.margin>
+            </Label>
+            <TableView fx:id="drugTable" style="-fx-pref-width: 600px;" maxWidth="600">
+                <columns>
+                    <TableColumn fx:id="selectColumn" text="Select" prefWidth="50" />
+                    <TableColumn fx:id="drugNameColumn" text="Drug Name" prefWidth="110" />
+                    <TableColumn fx:id="supplierColumn" text="Supplier" prefWidth="110" />
+                    <TableColumn fx:id="priceColumn" text="Price Per Unit" prefWidth="110" />
+                    <TableColumn fx:id="quantityColumn" text="Quantity" prefWidth="110" />
+                    <TableColumn fx:id="expiryDateColumn" text="Expiry Date" prefWidth="110" />
+                </columns>
+            </TableView>
+            <HBox spacing="10" alignment="CENTER">
+                <Button fx:id="addButton" text="Add Drug" textFill="#ffffff" style="-fx-background-color: #28a745; -fx-pref-height: 40px; -fx-font-family: 'Inter'; -fx-font-size: 14;" />
+                <Button fx:id="removeButton" text="Remove Selected Drugs" textFill="#ffffff" style="-fx-background-color: #dc3545; -fx-pref-height: 40px; -fx-font-family: 'Inter'; -fx-font-size: 14;" />
+            </HBox>
+        </VBox>
+    </VBox>
+</StackPane>

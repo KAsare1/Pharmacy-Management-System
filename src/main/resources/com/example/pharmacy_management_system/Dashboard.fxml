@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.text.Font?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.pharmacy_management_system.controllers.DashboardController" style="-fx-background-color: #f8fafb; -fx-font-smoothing-type: lcd;">
+    <VBox spacing="10" alignment="TOP_CENTER">
+        <fx:include source="Header.fxml" />
+
+        <VBox spacing="20">
+
+        <Label text="Dashboard" textFill="#0e141b" alignment="BASELINE_LEFT">
+            <font>
+                <Font name="Inter Bold" size="32"/>
+            </font>
+            <VBox.margin>
+                <Insets top="30" left="100"/>
+            </VBox.margin>
+        </Label>
+
+        <HBox spacing="20" style="-fx-margin: 100;">
+            <VBox.margin>
+                <Insets top="10" bottom="10" left="100"/>
+            </VBox.margin>
+
+            <VBox spacing="10" style="-fx-background-color: #e8edf3; -fx-padding: 60px; -fx-background-radius: 10; -fx-pref-width: 300px;">
+                <Label text="Total drugs" textFill="#0e141b">
+                    <font>
+                        <Font name="Inter Medium" size="14"/>
+                    </font>
+                </Label>
+                <Label text="10,000" textFill="#0e141b">
+                    <font>
+                        <Font name="Inter Bold" size="24"/>
+                    </font>
+                </Label>
+            </VBox>
+            <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #e8edf3; -fx-padding: 60px; -fx-background-radius: 10; -fx-pref-width: 300px;">
+                <Label text="Total sales" textFill="#0e141b">
+                    <font>
+                        <Font name="Inter Medium" size="14"/>
+                    </font>
+                </Label>
+                <Label text="\$100,000" textFill="#0e141b">
+                    <font>
+                        <Font name="Inter Bold" size="24"/>
+                    </font>
+                </Label>
+            </VBox>
+            <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #e8edf3; -fx-padding: 60px; -fx-background-radius: 10; -fx-pref-width: 300px;">
+                <Label text="Total customers" textFill="#0e141b">
+                    <font>
+                        <Font name="Inter Medium" size="14"/>
+                    </font>
+                </Label>
+                <Label text="500" textFill="#0e141b">
+                    <font>
+                        <Font name="Inter Bold" size="24"/>
+                    </font>
+                </Label>
+            </VBox>
+            <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #e8edf3; -fx-padding: 60px; -fx-background-radius: 10; -fx-pref-width: 300px;">
+                <Label text="Total orders" textFill="#0e141b">
+                    <font>
+                        <Font name="Inter Medium" size="14"/>
+                    </font>
+                </Label>
+                <Label text="1,000" textFill="#0e141b">
+                    <font>
+                        <Font name="Inter Bold" size="24"/>
+                    </font>
+                </Label>
+            </VBox>
+        </HBox>
+    </VBox>
+
+
+    </VBox>
+</StackPane>
