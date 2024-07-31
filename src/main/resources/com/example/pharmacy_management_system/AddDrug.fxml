@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.control.ComboBox?>
 
 <StackPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.pharmacy_management_system.controllers.AddDrugs" style="-fx-background-color: #f8fafb; -fx-font-smoothing-type: lcd;">
     <VBox spacing="10" alignment="TOP_CENTER">
@@ -46,7 +47,7 @@
                         <Font name="Inter Medium" size="14"/>
                     </font>
                 </Label>
-                <TextField fx:id="supplierField" promptText="Enter supplier name" style="-fx-font-family: 'Inter'; -fx-font-size: 14; -fx-pref-height: 50; -fx-pref-width: 1" prefWidth="2"/>
+                <ComboBox fx:id="supplierComboBox" promptText="Select supplier" style="-fx-font-family: 'Inter'; -fx-font-size: 14; -fx-pref-height: 50; -fx-pref-width: 250;"/>
 
                 <Label text="Price per Unit" textFill="#0e141b">
                     <font>
@@ -66,7 +67,7 @@
                             <Font name="Inter Medium" size="14"/>
                         </font>
                     </Label>
-                    <TextField fx:id="quantityField" promptText="Enter quantity" style="-fx-font-family: 'Inter'; -fx-font-size: 14; -fx-pref-height: 50;"/>
+                    <TextField fx:id="quantityField" promptText="Enter quantity" style="-fx-font-family: 'Inter'; -fx-font-size: 14;"/>
 
                     <Label text="Expiration Date" textFill="#0e141b">
                         <font>
@@ -77,8 +78,7 @@
 
                 </HBox>
 
-
-                <Button fx:id="addDrug" text="Add Drug" onAction="#addDrug" style="-fx-background-color: #1972d2; -fx-text-fill: white; -fx-font-family: 'Inter'; -fx-font-size: 14; -fx-pref-height: 60; -fx-pref-width: 150;"/>
+                <Button fx:id="addDrugButton" text="Add Drug" onAction="#addDrug" style="-fx-background-color: #1972d2; -fx-text-fill: white; -fx-font-family: 'Inter'; -fx-font-size: 14; -fx-pref-height: 60; -fx-pref-width: 150;"/>
             </VBox>
         </VBox>
     </VBox>

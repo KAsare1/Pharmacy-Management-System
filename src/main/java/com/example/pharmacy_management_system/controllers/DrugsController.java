@@ -2,6 +2,7 @@ package com.example.pharmacy_management_system.controllers;
 
 import com.example.pharmacy_management_system.DBConnection;
 import com.example.pharmacy_management_system.models.Drug;
+import com.example.pharmacy_management_system.models.Supplier;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -17,7 +18,7 @@ import java.io.IOException;
 import java.sql.*;
 import java.time.LocalDate;
 
-public class DrugsController{
+public class DrugsController {
 
     @FXML
     private Button searchButton;
@@ -38,7 +39,7 @@ public class DrugsController{
     private TableColumn<Drug, Double> priceColumn;
 
     @FXML
-    private TableColumn<Drug, String> supplierColumn;
+    private TableColumn<Drug, Supplier> supplierColumn; // Changed to Supplier
 
     @FXML
     private TableColumn<Drug, LocalDate> expiryDateColumn;
@@ -64,7 +65,17 @@ public class DrugsController{
         selectColumn.setEditable(true);
 
         drugNameColumn.setCellValueFactory(cellData -> cellData.getValue().drugNameProperty());
+
+        // Update supplier column to use Supplier type and display name
         supplierColumn.setCellValueFactory(cellData -> cellData.getValue().supplierProperty());
+        supplierColumn.setCellFactory(column -> new TableCell<Drug, Supplier>() {
+            @Override
+            protected void updateItem(Supplier supplier, boolean empty) {
+                super.updateItem(supplier, empty);
+                setText(empty ? null : supplier == null ? "N/A" : supplier.getSupplierName());
+            }
+        });
+
         priceColumn.setCellValueFactory(cellData -> cellData.getValue().priceProperty().asObject());
         quantityColumn.setCellValueFactory(cellData -> cellData.getValue().quantityProperty().asObject());
         expiryDateColumn.setCellValueFactory(cellData -> cellData.getValue().expiryDateProperty());
@@ -82,15 +93,24 @@ public class DrugsController{
 
     private void loadDrugData() {
         drugList = FXCollections.observableArrayList();
-        String query = "SELECT * FROM drug";
+        String query = "SELECT d.drugName, d.pricePerUnit, d.quantity, d.expirationDate, s.supplierId, s.supplierName, s.location, s.contactNumber " +
+                "FROM drug d JOIN supplier s ON d.supplierId = s.supplierId"; // Updated query to join supplier
+
         try (Connection conn = DBConnection.getConnect();
              PreparedStatement pstmt = conn.prepareStatement(query);
              ResultSet rs = pstmt.executeQuery()) {
 
             while (rs.next()) {
+                Supplier supplier = new Supplier(
+                        rs.getInt("supplierId"),
+                        rs.getString("supplierName"),
+                        rs.getString("location"),
+                        rs.getString("contactNumber")
+                );
+
                 Drug drug = new Drug(
                         rs.getString("drugName"),
-                        rs.getString("supplier"),
+                        supplier,
                         rs.getDouble("pricePerUnit"),
                         rs.getInt("quantity"),
                         rs.getDate("expirationDate").toLocalDate()
@@ -104,6 +124,7 @@ public class DrugsController{
         }
         drugTable.setItems(drugList);
     }
+
     private void openAddDrugDialog() {
         try {
             // Load the AddDrug scene
@@ -155,12 +176,10 @@ public class DrugsController{
         ObservableList<Drug> filteredList = FXCollections.observableArrayList();
         for (Drug drug : drugList) {
             if (drug.getDrugName().toLowerCase().contains(searchText) ||
-                    drug.getSupplier().toLowerCase().contains(searchText)) {
+                    drug.getSupplier().getSupplierName().toLowerCase().contains(searchText)) { // Adjusted for Supplier
                 filteredList.add(drug);
             }
         }
         drugTable.setItems(filteredList);
     }
 }
-
-

@@ -1,58 +1,75 @@
 package com.example.pharmacy_management_system.models;
 
+import javafx.beans.property.*;
+
 public class Supplier {
-    private int supplierId;
-    private String supplierName;
-    private String location;
+    private final IntegerProperty supplierId;
+    private final StringProperty supplierName;
+    private final StringProperty location;
+    private final StringProperty contactNumber;
 
     public Supplier(int supplierId, String supplierName, String location, String contactNumber) {
-        this.supplierId = supplierId;
-        this.supplierName = supplierName;
-        this.location = location;
+        this.supplierId = new SimpleIntegerProperty(supplierId);
+        this.supplierName = new SimpleStringProperty(supplierName);
+        this.location = new SimpleStringProperty(location);
+        this.contactNumber = new SimpleStringProperty(contactNumber);
     }
 
     public int getSupplierId() {
-        return supplierId;
+        return supplierId.get();
     }
 
     public void setSupplierId(int supplierId) {
-        this.supplierId = supplierId;
+        this.supplierId.set(supplierId);
+    }
+
+    public IntegerProperty supplierIdProperty() {
+        return supplierId;
     }
 
     public String getSupplierName() {
-        return supplierName;
+        return supplierName.get();
     }
 
     public void setSupplierName(String supplierName) {
-        this.supplierName = supplierName;
+        this.supplierName.set(supplierName);
+    }
+
+    public StringProperty supplierNameProperty() {
+        return supplierName;
     }
 
     public String getLocation() {
-        return location;
+        return location.get();
     }
 
     public void setLocation(String location) {
-        this.location = location;
+        this.location.set(location);
+    }
+
+    public StringProperty locationProperty() {
+        return location;
+    }
+
+    public String getContactNumber() {
+        return contactNumber.get();
+    }
+
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber.set(contactNumber);
+    }
+
+    public StringProperty contactNumberProperty() {
+        return contactNumber;
     }
 
     @Override
     public String toString() {
         return "Supplier{" +
-                "supplierId='" + supplierId + '\'' +
-                ", supplierName='" + supplierName + '\'' +
-                ", location='" + location + '\'' +
+                "supplierId=" + getSupplierId() +
+                ", supplierName='" + getSupplierName() + '\'' +
+                ", location='" + getLocation() + '\'' +
+                ", contactNumber='" + getContactNumber() + '\'' +
                 '}';
-    }
-
-    public String getName() {
-        return "";
-    }
-
-    public String getContactNumber() {
-        return null;
-    }
-
-    public String toLowerCase() {
-        return supplierName.toLowerCase();
     }
 }
