@@ -21,14 +21,10 @@ public class HeaderController {
     @FXML
     private Button inventoryButton;
 
-    @FXML
-    private Button ordersButton;
 
     @FXML
     private Button addDrugButton;
 
-    @FXML
-    private Button reportsButton;
 
     @FXML
     private Button notificationsButton;
@@ -41,9 +37,7 @@ public class HeaderController {
         dashboardButton.setOnAction(e -> switchToScene("Dashboard.fxml"));
         salesButton.setOnAction(e -> switchToScene("Sales.fxml"));
         inventoryButton.setOnAction(e -> switchToScene("Inventory.fxml"));
-        ordersButton.setOnAction(e -> switchToScene("Orders.fxml"));
         addDrugButton.setOnAction(e -> switchToScene("AddDrug.fxml"));
-        reportsButton.setOnAction(e -> switchToScene("Reports.fxml"));
         notificationsButton.setOnAction(e -> switchToScene("Notifications.fxml"));
         settingsButton.setOnAction(e -> switchToScene("Settings.fxml"));
     }

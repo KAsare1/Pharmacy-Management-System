@@ -4,6 +4,7 @@ import com.example.pharmacy_management_system.DBConnection;
 import com.example.pharmacy_management_system.models.Sales;
 import com.example.pharmacy_management_system.models.Drug;
 import com.example.pharmacy_management_system.models.Supplier;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -39,7 +40,10 @@ public class SalesController {
     @FXML
     public void initialize() {
         // Initialize columns
-        drugSoldColumn.setCellValueFactory(new PropertyValueFactory<>("drugSold"));
+        drugSoldColumn.setCellValueFactory(cellData -> {
+            Drug drug = cellData.getValue().getDrugSold(); // Get the Drug object
+            return new SimpleStringProperty(drug.getDrugName()); // Return the drugName as a StringProperty
+        });
         quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         amountColumn.setCellValueFactory(new PropertyValueFactory<>("amount"));
         buyerColumn.setCellValueFactory(new PropertyValueFactory<>("buyer"));
@@ -56,7 +60,8 @@ public class SalesController {
 
         // SQL query to retrieve sales data
         String query = "SELECT s.salesId, s.quantity, s.amount, s.buyer, s.date, s.time, " +
-                "d.drugName, d.pricePerUnit, d.quantity AS drugQuantity, d.expirationDate " +
+                "d.drugName, d.pricePerUnit, d.quantity AS drugQuantity, d.expirationDate, " +
+                "d.supplierId " +  // Include the supplierId in the query
                 "FROM sales s " +
                 "JOIN drug d ON s.drug_sold = d.drugCode";
 
@@ -83,7 +88,7 @@ public class SalesController {
 
                 // Create Sales instance
                 Sales sale = new Sales(
-                        resultSet.getInt("sales_id"),
+                        resultSet.getInt("salesId"),
                         drug,
                         resultSet.getInt("quantity"),
                         resultSet.getDouble("amount"),
