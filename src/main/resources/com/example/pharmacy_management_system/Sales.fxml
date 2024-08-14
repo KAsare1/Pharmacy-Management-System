@@ -31,7 +31,7 @@
                     <TableColumn fx:id="drugSoldColumn" text="Drug Name" minWidth="200" />
                     <TableColumn fx:id="buyerColumn" text="Buyer" minWidth="200" />
                     <TableColumn fx:id="quantityColumn" text="Quantity" minWidth="100" />
-                    <TableColumn fx:id="amountColumn" text="Amount" minWidth="100" />
+                    <TableColumn fx:id="amountColumn" text="Price" minWidth="100" />
                     <TableColumn fx:id="dateColumn" text="Date" minWidth="150" />
                     <TableColumn fx:id="timeColumn" text="Time" minWidth="150" />
                 </columns>

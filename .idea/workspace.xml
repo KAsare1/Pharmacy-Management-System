@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="cd9b5cac-3d63-471a-a566-d8d57cf362aa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/HeaderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/HeaderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/DashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/SalesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/SalesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/Header.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/Header.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/models/Sales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/models/Sales.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/Dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/Sales.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/Sales.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +87,7 @@
       <updated>1722394494625</updated>
       <workItem from="1722394495706" duration="23967000" />
       <workItem from="1722613007859" duration="189000" />
-      <workItem from="1723647657780" duration="1196000" />
+      <workItem from="1723647657780" duration="7742000" />
     </task>
     <servers />
   </component>

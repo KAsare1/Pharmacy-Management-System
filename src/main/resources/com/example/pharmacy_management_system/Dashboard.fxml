@@ -1,86 +1,220 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.Region?>
 
 <StackPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.pharmacy_management_system.controllers.DashboardController" style="-fx-background-color: #f8fafb; -fx-font-smoothing-type: lcd;">
     <VBox spacing="10" alignment="TOP_CENTER">
         <fx:include source="Header.fxml" />
 
-        <VBox spacing="20">
-
-        <Label text="Dashboard" textFill="#0e141b" alignment="BASELINE_LEFT">
-            <font>
-                <Font name="Inter Bold" size="32"/>
-            </font>
-            <VBox.margin>
-                <Insets top="30" left="100"/>
-            </VBox.margin>
-        </Label>
-
-        <HBox spacing="20" style="-fx-margin: 100;">
-            <VBox.margin>
-                <Insets top="10" bottom="10" left="100"/>
-            </VBox.margin>
-
-            <VBox spacing="10" style="-fx-background-color: #e8edf3; -fx-padding: 60px; -fx-background-radius: 10; -fx-pref-width: 300px;">
-                <Label text="Total drugs" textFill="#0e141b">
+        <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+            <VBox spacing="20">
+                <Label text="Dashboard" textFill="#0e141b" alignment="BASELINE_LEFT">
                     <font>
-                        <Font name="Inter Medium" size="14"/>
+                        <Font name="Inter Bold" size="32"/>
                     </font>
+                    <VBox.margin>
+                        <Insets top="30" left="100"/>
+                    </VBox.margin>
                 </Label>
-                <Label text="10,000" textFill="#0e141b">
-                    <font>
-                        <Font name="Inter Bold" size="24"/>
-                    </font>
-                </Label>
+
+                <!-- Overview Section -->
+                <HBox spacing="20" style="-fx-margin: 100;">
+                    <VBox.margin>
+                        <Insets top="10" bottom="10" left="100" right="100"/>
+                    </VBox.margin>
+
+                    <VBox spacing="10" style="-fx-background-color: #e8edf3; -fx-padding: 60px; -fx-background-radius: 10; -fx-pref-width: 300px;">
+                        <Label text="Total Drugs" textFill="#0e141b">
+                            <font>
+                                <Font name="Inter Medium" size="14"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="totalDrugsLabel" textFill="#0e141b">
+                            <font>
+                                <Font name="Inter Bold" size="24"/>
+                            </font>
+                        </Label>
+                    </VBox>
+                    <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #e8edf3; -fx-padding: 60px; -fx-background-radius: 10; -fx-pref-width: 300px;">
+                        <Label text="Total Sales" textFill="#0e141b">
+                            <font>
+                                <Font name="Inter Medium" size="14"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="totalSalesLabel" textFill="#0e141b">
+                            <font>
+                                <Font name="Inter Bold" size="24"/>
+                            </font>
+                        </Label>
+                    </VBox>
+                    <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #e8edf3; -fx-padding: 60px; -fx-background-radius: 10; -fx-pref-width: 300px;">
+                        <Label text="Total Sales" textFill="#0e141b">
+                            <font>
+                                <Font name="Inter Medium" size="14"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="totalSalesLabel2" textFill="#0e141b">
+                            <font>
+                                <Font name="Inter Bold" size="24"/>
+                            </font>
+                        </Label>
+                    </VBox>
+                    <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #e8edf3; -fx-padding: 60px; -fx-background-radius: 10; -fx-pref-width: 300px;">
+                        <Label text="Total Sales" textFill="#0e141b">
+                            <font>
+                                <Font name="Inter Medium" size="14"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="totalSalesLabel3" textFill="#0e141b">
+                            <font>
+                                <Font name="Inter Bold" size="24"/>
+                            </font>
+                        </Label>
+                    </VBox>
+                    <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #e8edf3; -fx-padding: 60px; -fx-background-radius: 10; -fx-pref-width: 300px;">
+                        <Label text="Total Customers" textFill="#0e141b">
+                            <font>
+                                <Font name="Inter Medium" size="14"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="totalCustomersLabel" textFill="#0e141b">
+                            <font>
+                                <Font name="Inter Bold" size="24"/>
+                            </font>
+                        </Label>
+                    </VBox>
+                    <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #e8edf3; -fx-padding: 60px; -fx-background-radius: 10; -fx-pref-width: 300px;">
+                        <Label text="Total Orders" textFill="#0e141b">
+                            <font>
+                                <Font name="Inter Medium" size="14"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="totalOrdersLabel" textFill="#0e141b">
+                            <font>
+                                <Font name="Inter Bold" size="24"/>
+                            </font>
+                        </Label>
+                    </VBox>
+                </HBox>
+
+                <!-- Charts Section with 3 Columns -->
+                <VBox spacing="20">
+                    <VBox.margin>
+                        <Insets bottom="50" left="100" right="100"/>
+                    </VBox.margin>
+                    <HBox spacing="20" HBox.hgrow="ALWAYS">
+                        <!-- Sales Trends -->
+                        <VBox spacing="10" style="-fx-background-color: #ffffff; -fx-padding: 20px; -fx-background-radius: 10;" HBox.hgrow="ALWAYS">
+                            <Label text="Sales Trends" textFill="#0e141b">
+                                <font>
+                                    <Font name="Inter Bold" size="18"/>
+                                </font>
+                            </Label>
+                            <LineChart fx:id="salesLineChart" VBox.vgrow="ALWAYS">
+                                <xAxis>
+                                    <CategoryAxis label="Month" />
+                                </xAxis>
+                                <yAxis>
+                                    <NumberAxis label="Sales ($)" />
+                                </yAxis>
+                            </LineChart>
+                        </VBox>
+
+                        <!-- Financial Health -->
+                        <VBox spacing="10" style="-fx-background-color: #ffffff; -fx-padding: 20px; -fx-background-radius: 10;" HBox.hgrow="ALWAYS">
+                            <Label text="Financial Health" textFill="#0e141b">
+                                <font>
+                                    <Font name="Inter Bold" size="18"/>
+                                </font>
+                            </Label>
+                            <BarChart fx:id="financialBarChart" VBox.vgrow="ALWAYS">
+                                <xAxis>
+                                    <CategoryAxis label="Month" />
+                                </xAxis>
+                                <yAxis>
+                                    <NumberAxis label="Profit ($)" />
+                                </yAxis>
+                            </BarChart>
+                        </VBox>
+
+                        <!-- Drug Inventory -->
+                        <VBox spacing="10" style="-fx-background-color: #ffffff; -fx-padding: 20px; -fx-background-radius: 10;" HBox.hgrow="ALWAYS">
+                            <Label text="Drug Inventory" textFill="#0e141b">
+                                <font>
+                                    <Font name="Inter Bold" size="18"/>
+                                </font>
+                            </Label>
+                            <BarChart fx:id="drugInventoryBarChart" VBox.vgrow="ALWAYS">
+                                <xAxis>
+                                    <CategoryAxis label="Drug Type" />
+                                </xAxis>
+                                <yAxis>
+                                    <NumberAxis label="Quantity" />
+                                </yAxis>
+                            </BarChart>
+                        </VBox>
+                    </HBox>
+
+                    <HBox spacing="20" HBox.hgrow="ALWAYS">
+                        <!-- Supplier Contributions -->
+                        <VBox spacing="10" style="-fx-background-color: #ffffff; -fx-padding: 20px; -fx-background-radius: 10;" HBox.hgrow="ALWAYS">
+                            <Label text="Supplier Contributions" textFill="#0e141b">
+                                <font>
+                                    <Font name="Inter Bold" size="18"/>
+                                </font>
+                            </Label>
+                            <PieChart fx:id="supplierPieChart" VBox.vgrow="ALWAYS" />
+                        </VBox>
+
+                        <!-- Expiring Drugs -->
+                        <VBox spacing="10" style="-fx-background-color: #ffffff; -fx-padding: 20px; -fx-background-radius: 10;" HBox.hgrow="ALWAYS">
+                            <Label text="Expiring Drugs" textFill="#0e141b">
+                                <font>
+                                    <Font name="Inter Bold" size="18"/>
+                                </font>
+                            </Label>
+                            <BarChart fx:id="expiringDrugsBarChart" VBox.vgrow="ALWAYS">
+                                <xAxis>
+                                    <CategoryAxis label="Drug Type" />
+                                </xAxis>
+                                <yAxis>
+                                    <NumberAxis label="Quantity" />
+                                </yAxis>
+                            </BarChart>
+                        </VBox>
+
+                        <!-- Top-Selling Drugs -->
+                        <VBox spacing="10" style="-fx-background-color: #ffffff; -fx-padding: 20px; -fx-background-radius: 10;" HBox.hgrow="ALWAYS">
+                            <Label text="Top-Selling Drugs" textFill="#0e141b">
+                                <font>
+                                    <Font name="Inter Bold" size="18"/>
+                                </font>
+                            </Label>
+                            <BarChart fx:id="topSellingDrugsBarChart" VBox.vgrow="ALWAYS">
+                                <xAxis>
+                                    <CategoryAxis label="Drug Type" />
+                                </xAxis>
+                                <yAxis>
+                                    <NumberAxis label="Quantity Sold" />
+                                </yAxis>
+                            </BarChart>
+                        </VBox>
+                    </HBox>
+                </VBox>
             </VBox>
-            <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #e8edf3; -fx-padding: 60px; -fx-background-radius: 10; -fx-pref-width: 300px;">
-                <Label text="Total sales" textFill="#0e141b">
-                    <font>
-                        <Font name="Inter Medium" size="14"/>
-                    </font>
-                </Label>
-                <Label text="\$100,000" textFill="#0e141b">
-                    <font>
-                        <Font name="Inter Bold" size="24"/>
-                    </font>
-                </Label>
-            </VBox>
-            <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #e8edf3; -fx-padding: 60px; -fx-background-radius: 10; -fx-pref-width: 300px;">
-                <Label text="Total customers" textFill="#0e141b">
-                    <font>
-                        <Font name="Inter Medium" size="14"/>
-                    </font>
-                </Label>
-                <Label text="500" textFill="#0e141b">
-                    <font>
-                        <Font name="Inter Bold" size="24"/>
-                    </font>
-                </Label>
-            </VBox>
-            <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #e8edf3; -fx-padding: 60px; -fx-background-radius: 10; -fx-pref-width: 300px;">
-                <Label text="Total orders" textFill="#0e141b">
-                    <font>
-                        <Font name="Inter Medium" size="14"/>
-                    </font>
-                </Label>
-                <Label text="1,000" textFill="#0e141b">
-                    <font>
-                        <Font name="Inter Bold" size="24"/>
-                    </font>
-                </Label>
-            </VBox>
-        </HBox>
-    </VBox>
-
-
+        </ScrollPane>
     </VBox>
 </StackPane>
