@@ -37,8 +37,7 @@ public class AuthenticationController {
 
     @FXML
     public void initialize() {
-        LoginButton.setOnAction(e -> openDashboard());
-
+        LoginButton.setOnAction(e -> handleLoginAction());
         splitPane.getDividers().get(0).positionProperty().addListener((obs, oldVal, newVal) -> {
             splitPane.setDividerPositions(0.5);  // Lock the divider at 50% position
         });
@@ -65,7 +64,7 @@ public class AuthenticationController {
     }
 
     @FXML
-    private void handleLoginAction(ActionEvent event) {
+    private void handleLoginAction() {
         // Retrieve username and password from input fields
         String enteredUsername = usernameField.getText();
         String enteredPassword = passwordField.getText();
@@ -75,6 +74,7 @@ public class AuthenticationController {
             // Successful login logic here
             errorLabel.setText("Login successful!");
             errorLabel.setStyle("-fx-text-fill: green;");
+            openDashboard();
 
             // You can navigate to the next scene or dashboard here
         } else {
