@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 
 public class DBConnection {
     private static final String DB_URL = "jdbc:mysql://avnadmin:AVNS_1BVhXhdCxfXGYXIsdHZ@mysql-37c79811-asareamankwah2-a951.i.aivencloud.com:24833/DSA?ssl-mode=REQUIRED";
-    private static final String DB_USER = "avnadmin";
+    private static final String DB_USER = " ";
     private static final String DB_PASSWORD = " ";
 
     private static final Logger logger = Logger.getLogger(DBConnection.class.getName());

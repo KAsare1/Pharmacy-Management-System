@@ -26,9 +26,9 @@
         <VBox alignment="CENTER" spacing="20.0" maxWidth="300">
             <Label text="Login" style="-fx-font-size: 38px; -fx-font-weight: bold;"/>
 
-            <TextField fx:id="usernameField" promptText="Username" style="-fx-font-size: 14px; -fx-pref-height: 40px;"/>
-            <PasswordField fx:id="passwordField" promptText="Password" style="-fx-font-size: 14px; -fx-pref-height: 40px;"/>
-            <Button text="Login" onAction="#handleLoginAction"
+            <TextField fx:id="usernameField" promptText="Username" style="-fx-pref-width: 300px; -fx-pref-height: 40px; -fx-font-family: 'Inter'; -fx-font-size: 14;"/>
+            <PasswordField fx:id="passwordField" promptText="Password" style="-fx-pref-width: 300px; -fx-pref-height: 40px; -fx-font-family: 'Inter'; -fx-font-size: 14;"/>
+            <Button text="Login" fx:id="LoginButton" onAction="#handleLoginAction"
                     style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-size: 14px; -fx-pref-width: 200px; -fx-pref-height: 40px;"/>
 
             <!-- Optional: A Label for error messages -->

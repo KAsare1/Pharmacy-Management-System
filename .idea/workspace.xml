@@ -5,24 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd9b5cac-3d63-471a-a566-d8d57cf362aa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/AuthenticationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/models/Users.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/pharmacy_management_system.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/Images/pharm.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/Login.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/styles/table-style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/DBConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/DashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/DrugsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/DrugsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/AuthenticationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/HeaderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/HeaderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/SalesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/SalesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/SalesDataAccess.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/models/Sales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/models/Sales.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/Dashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/Inventory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/Inventory.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/Sales.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/Sales.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/Login.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +102,7 @@
       <workItem from="1722613007859" duration="189000" />
       <workItem from="1723647657780" duration="12949000" />
       <workItem from="1723726205181" duration="8698000" />
-      <workItem from="1724006779880" duration="5002000" />
+      <workItem from="1724006779880" duration="11175000" />
     </task>
     <servers />
   </component>

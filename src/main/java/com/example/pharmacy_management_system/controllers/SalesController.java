@@ -68,14 +68,14 @@ public class SalesController {
         buyerColumn.setCellValueFactory(new PropertyValueFactory<>("buyer"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         timeColumn.setCellValueFactory(new PropertyValueFactory<>("time"));
-
+        loadSalesData();
         generateReportButton.setOnAction(event -> generateReports());
 
         // Search button event handler
         searchButton.setOnAction(event -> searchSale());
 
         // Load data
-        loadSalesData();
+
     }
 
     private void searchSale() {
@@ -83,7 +83,7 @@ public class SalesController {
         ObservableList<Sales> filteredList = FXCollections.observableArrayList();
         for (Sales sales : saleList) {
             if (sales.getBuyer().toLowerCase().contains(searchText) ||
-                    sales.getDrugSold().getDrugName().toLowerCase().contains(searchText)) { // Adjusted for Supplier
+                    sales.getDrugSold().getDrugName().toLowerCase().contains(searchText)) {
                 filteredList.add(sales);
             }
         }
@@ -96,7 +96,7 @@ public class SalesController {
 
 
     private void loadSalesData() {
-        ObservableList<Sales> salesList = FXCollections.observableArrayList();
+        saleList = FXCollections.observableArrayList();
 
         // SQL query to retrieve sales data
         String query = "SELECT s.salesId, s.quantity, s.amount, s.buyer, s.date, s.time, " +
@@ -138,13 +138,13 @@ public class SalesController {
                 );
 
                 // Add to the list
-                salesList.add(sale);
+                saleList.add(sale);
             }
         } catch (SQLException e) {
             e.printStackTrace(); // Handle exception properly
         }
 
         // Set the items in the TableView
-        purchaseHistoryTable.setItems(salesList);
+        purchaseHistoryTable.setItems(saleList);
     }
 }

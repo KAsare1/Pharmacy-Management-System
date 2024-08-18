@@ -43,7 +43,7 @@ public class HeaderController {
         settingsButton.setOnAction(e -> switchToScene("Settings.fxml"));
     }
 
-    private void switchToScene(String fxmlFile) {
+    public void switchToScene(String fxmlFile) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pharmacy_management_system/" + fxmlFile));
             Parent page = loader.load();
