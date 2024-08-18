@@ -13,6 +13,7 @@ public class Sales {
     private final StringProperty buyer;
     private final ObjectProperty<Date> date;
     private final ObjectProperty<Time> time;
+    private final BooleanProperty selected;
 
 
     public Sales(int salesId, Drug drugSold, int quantity, double amount, String buyer, Date date, Time time) {
@@ -23,6 +24,7 @@ public class Sales {
         this.buyer = new SimpleStringProperty(buyer);
         this.date = new SimpleObjectProperty<>(date);
         this.time = new SimpleObjectProperty<>(time);
+        this.selected = new SimpleBooleanProperty(false);
     }
 
     // Getters and setters for salesId
@@ -114,6 +116,19 @@ public class Sales {
 
     public ObjectProperty<Time> timeProperty() {
         return time;
+    }
+
+    // Getters and setters for selected
+    public boolean isSelected() {
+        return selected.get();
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected.set(selected);
+    }
+
+    public BooleanProperty selectedProperty() {
+        return selected;
     }
 
     @Override

@@ -1,15 +1,19 @@
 package com.example.pharmacy_management_system;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class DBConnection {
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/pharmacy_management_system";
-    private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "";
+    private static final String DB_URL = "jdbc:mysql://avnadmin:AVNS_1BVhXhdCxfXGYXIsdHZ@mysql-37c79811-asareamankwah2-a951.i.aivencloud.com:24833/DSA?ssl-mode=REQUIRED";
+    private static final String DB_USER = "avnadmin";
+    private static final String DB_PASSWORD = "AVNS_1BVhXhdCxfXGYXIsdHZ";
 
     private static final Logger logger = Logger.getLogger(DBConnection.class.getName());
 
@@ -25,6 +29,7 @@ public class DBConnection {
             throw e;
         }
     }
+
 
     public static void closeConnection(AutoCloseable resource) {
         if (resource != null) {

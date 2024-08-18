@@ -12,6 +12,7 @@ import java.util.Objects;
 
 public class HeaderController {
 
+    public Button ReportsButton;
     @FXML
     private Button dashboardButton;
 

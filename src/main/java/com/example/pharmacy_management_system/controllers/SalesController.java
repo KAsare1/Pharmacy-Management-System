@@ -8,8 +8,11 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.sql.Connection;
@@ -22,8 +25,15 @@ import java.sql.Time;
 public class SalesController {
 
     @FXML
+    public TextField searchTextField;
+    @FXML
+    public Button searchButton;
+    @FXML
+    public Button generateReportButton;
+    @FXML
+    private TableColumn<Sales, Boolean> selectColumn;
+    @FXML
     private TableView<Sales> purchaseHistoryTable;
-
     @FXML
     private TableColumn<Sales, String> drugSoldColumn;
     @FXML
@@ -37,8 +47,17 @@ public class SalesController {
     @FXML
     private TableColumn<Sales, Time> timeColumn;
 
+    private ObservableList<Sales> saleList;
+
     @FXML
     public void initialize() {
+
+        selectColumn.setCellValueFactory(new PropertyValueFactory<>("selected"));
+        selectColumn.setCellFactory(column -> new CheckBoxTableCell<>());
+
+        selectColumn.setEditable(true);
+        purchaseHistoryTable.setEditable(true);
+
         // Initialize columns
         drugSoldColumn.setCellValueFactory(cellData -> {
             Drug drug = cellData.getValue().getDrugSold(); // Get the Drug object
@@ -50,8 +69,29 @@ public class SalesController {
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         timeColumn.setCellValueFactory(new PropertyValueFactory<>("time"));
 
+        generateReportButton.setOnAction(event -> generateReports());
+
+        // Search button event handler
+        searchButton.setOnAction(event -> searchSale());
+
         // Load data
         loadSalesData();
+    }
+
+    private void searchSale() {
+        String searchText = searchTextField.getText().toLowerCase();
+        ObservableList<Sales> filteredList = FXCollections.observableArrayList();
+        for (Sales sales : saleList) {
+            if (sales.getBuyer().toLowerCase().contains(searchText) ||
+                    sales.getDrugSold().getDrugName().toLowerCase().contains(searchText)) { // Adjusted for Supplier
+                filteredList.add(sales);
+            }
+        }
+        purchaseHistoryTable.setItems(filteredList);
+    }
+
+
+    private void generateReports() {
     }
 
 

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:id="splitPane"
+           fx:controller="com.example.pharmacy_management_system.controllers.AuthenticationController"
+           dividerPositions="0.5" orientation="HORIZONTAL">
+
+    <!-- Left Side: Image and Text -->
+    <StackPane>
+        <ImageView fitWidth="1000" fitHeight="1000" preserveRatio="false">
+            <image>
+                <Image url="@Images/login_pharmacy.jpg"/>
+            </image>
+        </ImageView>
+    </StackPane>
+
+    <!-- Right Side: Login Form -->
+    <StackPane style="-fx-background-color: #f0f0f0;">
+        <VBox alignment="CENTER" spacing="20.0" maxWidth="300">
+            <Label text="Login" style="-fx-font-size: 38px; -fx-font-weight: bold;"/>
+
+            <TextField fx:id="usernameField" promptText="Username" style="-fx-font-size: 14px; -fx-pref-height: 40px;"/>
+            <PasswordField fx:id="passwordField" promptText="Password" style="-fx-font-size: 14px; -fx-pref-height: 40px;"/>
+            <Button text="Login" onAction="#handleLoginAction"
+                    style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-size: 14px; -fx-pref-width: 200px; -fx-pref-height: 40px;"/>
+
+            <!-- Optional: A Label for error messages -->
+            <Label fx:id="errorLabel" textFill="red"/>
+        </VBox>
+    </StackPane>
+
+</SplitPane>

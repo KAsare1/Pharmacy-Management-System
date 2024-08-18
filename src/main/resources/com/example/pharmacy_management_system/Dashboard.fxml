@@ -61,30 +61,6 @@
                         </Label>
                     </VBox>
                     <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #e8edf3; -fx-padding: 60px; -fx-background-radius: 10; -fx-pref-width: 300px;">
-                        <Label text="Total Sales" textFill="#0e141b">
-                            <font>
-                                <Font name="Inter Medium" size="14"/>
-                            </font>
-                        </Label>
-                        <Label fx:id="totalSalesLabel2" textFill="#0e141b">
-                            <font>
-                                <Font name="Inter Bold" size="24"/>
-                            </font>
-                        </Label>
-                    </VBox>
-                    <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #e8edf3; -fx-padding: 60px; -fx-background-radius: 10; -fx-pref-width: 300px;">
-                        <Label text="Total Sales" textFill="#0e141b">
-                            <font>
-                                <Font name="Inter Medium" size="14"/>
-                            </font>
-                        </Label>
-                        <Label fx:id="totalSalesLabel3" textFill="#0e141b">
-                            <font>
-                                <Font name="Inter Bold" size="24"/>
-                            </font>
-                        </Label>
-                    </VBox>
-                    <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #e8edf3; -fx-padding: 60px; -fx-background-radius: 10; -fx-pref-width: 300px;">
                         <Label text="Total Customers" textFill="#0e141b">
                             <font>
                                 <Font name="Inter Medium" size="14"/>

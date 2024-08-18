@@ -32,10 +32,10 @@ public class DashboardController {
     }
 
     private void setupOverviewSection() {
-        totalDrugsLabel.setText("10,000");
-        totalSalesLabel.setText("$100,000");
-        totalCustomersLabel.setText("500");
-        totalOrdersLabel.setText("1,000");
+        totalDrugsLabel.setText("1217");
+        totalSalesLabel.setText("$100,020.00");
+        totalCustomersLabel.setText("1240");
+        totalOrdersLabel.setText("1,245");
     }
 
     private void setupSalesLineChart() {
@@ -77,10 +77,10 @@ public class DashboardController {
 
     private void setupSupplierPieChart() {
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
-                new PieChart.Data("Supplier A", 40),
-                new PieChart.Data("Supplier B", 30),
-                new PieChart.Data("Supplier C", 20),
-                new PieChart.Data("Supplier D", 10)
+                new PieChart.Data("Eon Labs, Inc", 40),
+                new PieChart.Data("Antigen Laboratory", 30),
+                new PieChart.Data("Ernest Chemists", 20),
+                new PieChart.Data("Zylera Pharmaceutical", 10)
         );
 
         supplierPieChart.setData(pieChartData);

@@ -147,20 +147,39 @@ public class DrugsController {
 
     private void removeSelectedDrugs() {
         ObservableList<Drug> selectedDrugs = FXCollections.observableArrayList();
+
+        // Collect selected drugs
         for (Drug drug : drugList) {
             if (drug.isSelected()) {
                 selectedDrugs.add(drug);
             }
         }
+
         if (!selectedDrugs.isEmpty()) {
-            String query = "DELETE FROM drug WHERE drugName = ?";
+            String checkQuery = "SELECT COUNT(*) FROM sales WHERE drug_sold = ?";
+            String deleteQuery = "DELETE FROM drug WHERE drugName = ?";
+
             try (Connection conn = DBConnection.getConnect();
-                 PreparedStatement pstmt = conn.prepareStatement(query)) {
+                 PreparedStatement checkStmt = conn.prepareStatement(checkQuery);
+                 PreparedStatement deleteStmt = conn.prepareStatement(deleteQuery)) {
+
                 for (Drug drug : selectedDrugs) {
-                    pstmt.setString(1, drug.getDrugName());
-                    pstmt.executeUpdate();
+                    checkStmt.setString(1, drug.getDrugName());
+                    ResultSet rs = checkStmt.executeQuery();
+                    if (rs.next() && rs.getInt(1) > 0) {
+                        System.out.println("Cannot delete drug '" + drug.getDrugName() + "' because it is referenced in the sales records.");
+                    } else {
+                        deleteStmt.setString(1, drug.getDrugName());
+                        deleteStmt.addBatch();
+                    }
                 }
+
+                // Execute batch deletion
+                deleteStmt.executeBatch();
+
+                // Remove drugs from the list
                 drugList.removeAll(selectedDrugs);
+
                 System.out.println("Selected drugs removed successfully!");
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -170,6 +189,7 @@ public class DrugsController {
             System.out.println("No drugs selected");
         }
     }
+
 
     private void searchDrug() {
         String searchText = searchTextField.getText().toLowerCase();

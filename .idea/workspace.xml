@@ -5,11 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd9b5cac-3d63-471a-a566-d8d57cf362aa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/AuthenticationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/models/Users.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/pharmacy_management_system.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/Images/pharm.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/Login.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/styles/table-style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/DBConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/DrugsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/DrugsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/HeaderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/HeaderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/SalesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/SalesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/controllers/SalesDataAccess.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/models/Sales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacy_management_system/models/Sales.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/Dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/Inventory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/Inventory.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/Sales.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pharmacy_management_system/Sales.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +32,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -45,27 +59,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/asare/IdeaProjects/Pharmacy Management System/src/main/java/com/example/pharmacy_management_system&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/asare/IdeaProjects/Pharmacy Management System/src/main/resources/com/example/pharmacy_management_system&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Users/asare/IdeaProjects/Pharmacy Management System/src/main/java/com/example/pharmacy_management_system",
+    "last_opened_file_path": "C:/Users/asare/IdeaProjects/Pharmacy Management System/src/main/java/com/example/pharmacy_management_system",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\asare\IdeaProjects\Pharmacy Management System\src\main\java\com\example\pharmacy_management_system" />
+      <recent name="C:\Users\asare\IdeaProjects\Pharmacy Management System\src\main\resources\com\example\pharmacy_management_system\Images" />
       <recent name="C:\Users\asare\IdeaProjects\Pharmacy Management System\src\main\resources\com\example\pharmacy_management_system" />
     </key>
   </component>
@@ -87,12 +109,25 @@
       <updated>1722394494625</updated>
       <workItem from="1722394495706" duration="23967000" />
       <workItem from="1722613007859" duration="189000" />
-      <workItem from="1723647657780" duration="7742000" />
+      <workItem from="1723647657780" duration="12949000" />
+      <workItem from="1723726205181" duration="8698000" />
+      <workItem from="1724006779880" duration="5002000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
