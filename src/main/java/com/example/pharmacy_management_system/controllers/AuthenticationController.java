@@ -3,6 +3,7 @@ package com.example.pharmacy_management_system.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -10,12 +11,15 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class AuthenticationController {
 
+    public StackPane stackPane;
     @FXML
     private TextField usernameField;
 
@@ -44,24 +48,18 @@ public class AuthenticationController {
     }
 
     private void openDashboard() {
-            try {
-                // Load the AddDrug scene
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pharmacy_management_system/Dashboard.fxml"));
-                Parent addDrugPage = loader.load();
-                Scene addDrugScene = new Scene(addDrugPage);
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pharmacy_management_system/Dashboard.fxml"));
+            Parent page = loader.load();
 
-                // Get the current stage
-                Stage currentStage = (Stage) LoginButton.getScene().getWindow();
-
-                // Switch to the new scene
-                currentStage.setScene(addDrugScene);
-
-                // Optionally restore the previous window size and state
-                currentStage.show();
-            } catch (IOException e) {
-                System.out.println("Error opening Add Drug dialog");
-            }
+            StackPane root = (StackPane) LoginButton.getScene().getRoot();
+            root.getChildren().clear();
+            root.getChildren().add(page);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
 
     @FXML
     private void handleLoginAction() {

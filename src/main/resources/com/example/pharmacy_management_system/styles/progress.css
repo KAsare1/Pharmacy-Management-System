@@ -1,0 +1,15 @@
+.custom-progress-indicator {
+    -fx-progress-color: #1972d2; /* Color of the progress bar */
+    -fx-pref-width: 100px;       /* Size of the indicator */
+    -fx-pref-height: 100px;
+    -fx-padding: 20px;           /* Padding around the indicator */
+}
+
+.custom-progress-indicator .spinner .arc {
+    -fx-stroke-width: 5;         /* Thickness of the spinner arc */
+    -fx-stroke: linear-gradient(to bottom right, #1972d2, #63a4ff); /* Gradient color */
+}
+
+.custom-progress-indicator:hover {
+    -fx-effect: dropshadow(gaussian, rgba(25,114,210,0.5), 15, 0.5, 0, 0); /* Glow effect on hover */
+}

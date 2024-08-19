@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<StackPane fx:id="root" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.pharmacy_management_system.controllers.ProgressIndicatorController">
+    <VBox alignment="CENTER" spacing="20">
+
+        <!-- Your UI Components -->
+        <Button text="Load Data" onAction="#loadData"/>
+
+        <!-- Loading Spinner with inline style -->
+        <ProgressIndicator fx:id="loadingIndicator" visible="false"
+                           style="-fx-progress-color: linear-gradient(to bottom right, #1972d2, #63a4ff);
+                   -fx-pref-width: 100px;
+                   -fx-pref-height: 100px;
+                   -fx-padding: 20px;" />
+
+    </VBox>
+</StackPane>
+

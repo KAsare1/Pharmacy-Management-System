@@ -14,72 +14,72 @@
 <?import javafx.scene.control.ComboBox?>
 
 <StackPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.pharmacy_management_system.controllers.AddDrugs" style="-fx-background-color: #f8fafb; -fx-font-smoothing-type: lcd;">
-    <VBox spacing="10" alignment="TOP_CENTER">
+    <VBox spacing="20" alignment="TOP_CENTER">
 
+        <!-- Include Header -->
         <fx:include source="Header.fxml" />
 
-        <VBox spacing="25" style="-fx-padding: 30;">
+        <!-- Container for form elements -->
+        <VBox spacing="30" alignment="TOP_CENTER" style="-fx-padding: 40 80 40 80;">
 
-            <Label text="Add New Drug" textFill="#0e141b" alignment="CENTER_LEFT">
+            <!-- Add New Drug Title -->
+            <Label text="Add New Drug" textFill="#0e141b" alignment="CENTER" style="-fx-font-size: 24px;">
                 <font>
                     <Font name="Inter Bold" size="24"/>
                 </font>
-                <VBox.margin>
-                    <Insets top="30" left="250"/>
-                </VBox.margin>
             </Label>
 
-            <VBox spacing="10" alignment="CENTER_LEFT" style="-fx-background-color: #ffffff; -fx-padding: 100px; -fx-background-radius: 50;">
+            <!-- Form Fields -->
+            <VBox spacing="20" alignment="CENTER_LEFT" style="-fx-background-color: #ffffff; -fx-padding: 50px; -fx-background-radius: 20;">
+                <!-- Drug Name -->
                 <Label text="Drug Name" textFill="#0e141b">
                     <font>
                         <Font name="Inter Medium" size="14"/>
                     </font>
                 </Label>
+                <TextField fx:id="drugNameField" promptText="Enter drug name" style="-fx-font-family: 'Inter'; -fx-font-size: 14; -fx-pref-height: 40; -fx-pref-width: 40;"/>
 
-                <TextField fx:id="drugNameField" promptText="Enter drug name" style="-fx-font-family: 'Inter'; -fx-font-size: 14; -fx-pref-height: 50;"/>
-
-                <VBox.margin>
-                    <Insets left="200" right="400"/>
-                </VBox.margin>
-
+                <!-- Supplier -->
                 <Label text="Supplier" textFill="#0e141b">
                     <font>
                         <Font name="Inter Medium" size="14"/>
                     </font>
                 </Label>
-                <ComboBox fx:id="supplierComboBox" promptText="Select supplier" style="-fx-font-family: 'Inter'; -fx-font-size: 14; -fx-pref-height: 50; -fx-pref-width: 250;"/>
+                <ComboBox fx:id="supplierComboBox" promptText="Select supplier" style="-fx-font-family: 'Inter'; -fx-font-size: 14; -fx-pref-height: 40; -fx-pref-width: 300;"/>
 
+                <!-- Price per Unit -->
                 <Label text="Price per Unit" textFill="#0e141b">
                     <font>
                         <Font name="Inter Medium" size="14"/>
                     </font>
                 </Label>
-                <TextField fx:id="priceField" promptText="Enter price per unit" style="-fx-font-family: 'Inter'; -fx-font-size: 14; -fx-pref-height: 50; -fx-pref-width: 1"/>
+                <TextField fx:id="priceField" promptText="Enter price per unit" style="-fx-font-family: 'Inter'; -fx-font-size: 14; -fx-pref-height: 40; -fx-pref-width: 150;"/>
 
-                <HBox spacing="15">
+                <!-- Quantity and Expiration Date -->
+                <HBox spacing="20" alignment="CENTER_LEFT">
+                    <VBox alignment="CENTER_LEFT" spacing="10">
+                        <Label text="Quantity" textFill="#0e141b">
+                            <font>
+                                <Font name="Inter Medium" size="14"/>
+                            </font>
+                        </Label>
+                        <TextField fx:id="quantityField" promptText="Enter quantity" style="-fx-font-family: 'Inter'; -fx-font-size: 14; -fx-pref-height: 40; -fx-pref-width: 150;"/>
+                    </VBox>
 
-                    <VBox.margin>
-                        <Insets top="20" bottom="20"/>
-                    </VBox.margin>
-
-                    <Label text="Quantity" textFill="#0e141b" textAlignment="CENTER">
-                        <font>
-                            <Font name="Inter Medium" size="14"/>
-                        </font>
-                    </Label>
-                    <TextField fx:id="quantityField" promptText="Enter quantity" style="-fx-font-family: 'Inter'; -fx-font-size: 14;"/>
-
-                    <Label text="Expiration Date" textFill="#0e141b">
-                        <font>
-                            <Font name="Inter Medium" size="14"/>
-                        </font>
-                    </Label>
-                    <DatePicker fx:id="expirationDatePicker" style="-fx-font-family: 'Inter'; -fx-font-size: 14; -fx-pref-height: 50;"/>
-
+                    <VBox alignment="CENTER_LEFT" spacing="10">
+                        <Label text="Expiration Date" textFill="#0e141b">
+                            <font>
+                                <Font name="Inter Medium" size="14"/>
+                            </font>
+                        </Label>
+                        <DatePicker fx:id="expirationDatePicker" style="-fx-font-family: 'Inter'; -fx-font-size: 14; -fx-pref-height: 40;"/>
+                    </VBox>
                 </HBox>
 
-                <Button fx:id="addDrugButton" text="Add Drug" onAction="#addDrug" style="-fx-background-color: #1972d2; -fx-text-fill: white; -fx-font-family: 'Inter'; -fx-font-size: 14; -fx-pref-height: 60; -fx-pref-width: 150;"/>
+                <!-- Add Drug Button -->
+                <Button fx:id="addDrugButton" text="Add Drug" onAction="#addDrug" style="-fx-background-color: #1972d2; -fx-text-fill: white; -fx-font-family: 'Inter'; -fx-font-size: 14; -fx-pref-height: 50; -fx-pref-width: 150;"/>
             </VBox>
         </VBox>
     </VBox>
 </StackPane>
+

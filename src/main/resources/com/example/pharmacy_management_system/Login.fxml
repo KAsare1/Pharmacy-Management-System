@@ -6,11 +6,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane xmlns="http://javafx.com/javafx"
+<StackPane xmlns="http://javafx.com/javafx"
            xmlns:fx="http://javafx.com/fxml"
-           fx:id="splitPane"
-           fx:controller="com.example.pharmacy_management_system.controllers.AuthenticationController"
-           dividerPositions="0.5" orientation="HORIZONTAL">
+           fx:id="stackPane"
+           fx:controller="com.example.pharmacy_management_system.controllers.AuthenticationController">
+
+<SplitPane dividerPositions="0.5" fx:id="splitPane">
 
     <!-- Left Side: Image and Text -->
     <StackPane>
@@ -37,3 +38,4 @@
     </StackPane>
 
 </SplitPane>
+</StackPane>

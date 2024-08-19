@@ -6,49 +6,60 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 
-<HBox alignment="CENTER" spacing="15"
-      style="-fx-background-color: #ffffff; -fx-border-color: #e8edf3; -fx-padding: 10px; -fx-font-smoothing-type: lcd;"
-      xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.pharmacy_management_system.controllers.HeaderController">
-    <HBox alignment="CENTER_LEFT" spacing="10">
-        <ImageView fitWidth="32" fitHeight="32">
-            <Image url="@Images/pill.png"/>
-            <HBox.margin>
-                <Insets left="13"/>
-            </HBox.margin>
-        </ImageView>
-        <Label text="PharmaTech" textFill="#0e141b">
-            <font>
-                <Font name="Inter Bold" size="18"/>
-            </font>
-        </Label>
-    </HBox>
+<StackPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.pharmacy_management_system.controllers.HeaderController">
 
-    <HBox alignment="CENTER_RIGHT" spacing="10" HBox.hgrow="ALWAYS">
-        <Button fx:id="dashboardButton" text="Dashboard" textFill="#0e141b" style="-fx-background-color: transparent; -fx-font-family: 'Inter'; -fx-font-size: 16;"/>
-        <Button fx:id="salesButton" text="Sales" textFill="#0e141b" style="-fx-background-color: transparent; -fx-font-family: 'Inter'; -fx-font-size: 16;"/>
-        <Button fx:id="inventoryButton" text="Inventory" textFill="#0e141b" style="-fx-background-color: transparent; -fx-font-family: 'Inter'; -fx-font-size: 16;"/>
-        <Button fx:id="addDrugButton" text="Add Drug" textFill="#0e141b" style="-fx-background-color: transparent; -fx-font-family: 'Inter'; -fx-font-size: 16;"/>
-        <HBox spacing="8">
-            <Button fx:id="notificationsButton" style="-fx-background-color: #e8edf3; -fx-font-family: 'Inter'; -fx-pref-width: 30px; -fx-pref-height: 40px;">
-                <graphic>
-                    <ImageView fitWidth="22" fitHeight="22">
-                        <Image url="@Images/bell.png"/>
-                    </ImageView>
-                </graphic>
-            </Button>
-            <Button fx:id="settingsButton" style="-fx-background-color: #e8edf3; -fx-font-family: 'Inter'; -fx-pref-width: 30px; -fx-pref-height: 40px;">
-                <graphic>
-                    <ImageView fitWidth="22" fitHeight="22">
-                        <Image url="@Images/settings.png"/>
-                    </ImageView>
-                </graphic>
-            </Button>
-            <ImageView fitWidth="40" fitHeight="40" style="-fx-background-radius: 50%;">
-                <Image url="@Images/user.png"/>
+    <!-- Header Content -->
+    <HBox alignment="CENTER" spacing="15"
+          style="-fx-background-color: #ffffff; -fx-border-color: #e8edf3; -fx-padding: 10px; -fx-font-smoothing-type: lcd;">
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <ImageView fitWidth="32" fitHeight="32">
+                <Image url="@Images/pill.png"/>
                 <HBox.margin>
-                    <Insets left="20"/>
+                    <Insets left="13"/>
                 </HBox.margin>
             </ImageView>
+            <Label text="PharmaTech" textFill="#0e141b">
+                <font>
+                    <Font name="Inter Bold" size="18"/>
+                </font>
+            </Label>
+        </HBox>
+
+        <HBox alignment="CENTER_RIGHT" spacing="10" HBox.hgrow="ALWAYS">
+            <Button fx:id="dashboardButton" text="Dashboard" textFill="#0e141b" style="-fx-background-color: transparent; -fx-font-family: 'Inter'; -fx-font-size: 16;"/>
+            <Button fx:id="salesButton" text="Sales" textFill="#0e141b" style="-fx-background-color: transparent; -fx-font-family: 'Inter'; -fx-font-size: 16;"/>
+            <Button fx:id="inventoryButton" text="Inventory" textFill="#0e141b" style="-fx-background-color: transparent; -fx-font-family: 'Inter'; -fx-font-size: 16;"/>
+            <Button fx:id="addDrugButton" text="Add Drug" textFill="#0e141b" style="-fx-background-color: transparent; -fx-font-family: 'Inter'; -fx-font-size: 16;"/>
+            <HBox spacing="8">
+                <Button fx:id="notificationsButton" style="-fx-background-color: #e8edf3; -fx-font-family: 'Inter'; -fx-pref-width: 30px; -fx-pref-height: 40px;">
+                    <graphic>
+                        <ImageView fitWidth="22" fitHeight="22">
+                            <Image url="@Images/bell.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="settingsButton" style="-fx-background-color: #e8edf3; -fx-font-family: 'Inter'; -fx-pref-width: 30px; -fx-pref-height: 40px;">
+                    <graphic>
+                        <ImageView fitWidth="22" fitHeight="22">
+                            <Image url="@Images/settings.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <ImageView fitWidth="40" fitHeight="40" style="-fx-background-radius: 50%;">
+                    <Image url="@Images/user.png"/>
+                    <HBox.margin>
+                        <Insets left="20"/>
+                    </HBox.margin>
+                </ImageView>
+            </HBox>
         </HBox>
     </HBox>
-</HBox>
+
+    <!-- Centered Progress Indicator -->
+    <ProgressIndicator fx:id="loadingIndicator" visible="false"
+                       style="-fx-progress-color: #1972d2;
+                          -fx-pref-width: 100px;
+                          -fx-pref-height: 100px;" />
+
+
+</StackPane>

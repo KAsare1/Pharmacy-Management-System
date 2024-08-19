@@ -31,12 +31,11 @@
                 </Label>
 
                 <!-- Overview Section -->
-                <HBox spacing="20" style="-fx-margin: 100;">
+                <HBox spacing="20" VBox.vgrow="NEVER">
                     <VBox.margin>
-                        <Insets top="10" bottom="10" left="100" right="100"/>
+                        <Insets bottom="50" left="100" right="100"/>
                     </VBox.margin>
-
-                    <VBox spacing="10" style="-fx-background-color: #e8edf3; -fx-padding: 60px; -fx-background-radius: 10; -fx-pref-width: 300px;">
+                    <VBox spacing="10" style="-fx-background-color: #e8edf3; -fx-padding: 20px; -fx-background-radius: 10;" HBox.hgrow="ALWAYS">
                         <Label text="Total Drugs" textFill="#0e141b">
                             <font>
                                 <Font name="Inter Medium" size="14"/>
@@ -48,7 +47,7 @@
                             </font>
                         </Label>
                     </VBox>
-                    <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #e8edf3; -fx-padding: 60px; -fx-background-radius: 10; -fx-pref-width: 300px;">
+                    <VBox spacing="10" style="-fx-background-color: #e8edf3; -fx-padding: 20px; -fx-background-radius: 10;" HBox.hgrow="ALWAYS">
                         <Label text="Total Sales" textFill="#0e141b">
                             <font>
                                 <Font name="Inter Medium" size="14"/>
@@ -60,7 +59,7 @@
                             </font>
                         </Label>
                     </VBox>
-                    <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #e8edf3; -fx-padding: 60px; -fx-background-radius: 10; -fx-pref-width: 300px;">
+                    <VBox spacing="10" style="-fx-background-color: #e8edf3; -fx-padding: 20px; -fx-background-radius: 10;" HBox.hgrow="ALWAYS">
                         <Label text="Total Customers" textFill="#0e141b">
                             <font>
                                 <Font name="Inter Medium" size="14"/>
@@ -72,7 +71,7 @@
                             </font>
                         </Label>
                     </VBox>
-                    <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #e8edf3; -fx-padding: 60px; -fx-background-radius: 10; -fx-pref-width: 300px;">
+                    <VBox spacing="10" style="-fx-background-color: #e8edf3; -fx-padding: 20px; -fx-background-radius: 10;" HBox.hgrow="ALWAYS">
                         <Label text="Total Orders" textFill="#0e141b">
                             <font>
                                 <Font name="Inter Medium" size="14"/>
